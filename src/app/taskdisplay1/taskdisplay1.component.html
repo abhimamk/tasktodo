@@ -1,105 +1,150 @@
+<div class="container-fluid">
 
-<h1>TaskBoards</h1>
+<h1 class="color">TaskBoards</h1>
+<div class="header">
+
+<div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
+</div>
+
 
 <div class="row">
-  <div class="column">
-    <div class="card">
-      <h3>To Do</h3>
-      <div class="container" *ngFor="let item of arr;let i=index" >
-       <div class="card" *ngIf="item.status=='todo'">
-        <div class="card-body">
-          {{item.desc}}
-        </div>
-        <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
-           <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
-           <label><button class="btn btn-primary" (click)="openEdit(content,i)">Edit</button></label>
-        </div>
+  <div class="col-sm-2">
+    <div class="card text-dark bg-light">
+      <div class="card-header bg-dark text-center text-light">
+        <h3>To Do</h3>
+      </div>
+    <div class="card-body">
+      <div class="list-group">
+          <div class="container" *ngFor="let item of arr;let i=index" >
+              <div class="card" *ngIf="item.status=='todo'">
+               <div class="card-text">
+                 {{item.desc}}
+               </div>
+               <div class="card-footer">
+                 <label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
+                 <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
+                 <label><button class="btn btn-primary" (click)="Edit(content,i)">Edit</button></label>
+               </div>
+             </div>
+           </div>
       </div>
     </div>
   </div>
  </div>
-<div class="column">
-  <div class="card">
-    <h3>In Progress</h3>
-    <div class="container" *ngFor="let item of arr;let i=index" >
-      <div class="card" *ngIf="item.status=='In Progress'">
-        <div class="card-body">
-          {{item.desc}}
-        </div>
-        <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
-          <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
-          <label>
-            <button class="btn btn-primary" (click)="openEdit(content,i)">Edit</button></label>
+<div class="col-sm-2">
+  <div class="card text-dark bg-light">
+      <div class="card-header bg-dark text-center text-light">
+         <h3>In Progress</h3>
+      </div>
+      <div class="card-body">
+        <div class="list-group">
+            <div class="container" *ngFor="let item of arr;let i=index" >
+                <div class="card" *ngIf="item.status=='In Progress'">
+                  <div class="card-text">
+                    {{item.desc}}
+                  </div>
+                  <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
+                    <label>
+                      <button class="btn btn-primary" (click)="Edit(content,i)">Edit</button></label>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
 
-<div class="column">
-  <div class="card">
-    <h3>Development Completed</h3>
-    <div class="container" *ngFor="let item of arr;let i=index" >
-      <div class="card" *ngIf="item.status=='Development Completed'">
-        <div class="card-body">
-          {{item.desc}}
-        </div>
-        <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
-          <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
-          <label><button class="btn btn-primary" (click)="openEdit(content,i)">Edit</button></label>
+<div class="col-sm-2">
+  <div class="card text-dark bg-light">
+      <div class="card-header bg-dark text-center text-light">
+        <h3>Development Completed</h3>
+      </div>
+      <div class="card-body">
+        <div class="card-list">
+            <div class="container" *ngFor="let item of arr;let i=index" >
+                <div class="card" *ngIf="item.status=='Development Completed'">
+                  <div class="card-text">
+                    {{item.desc}}
+                  </div>
+                  <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
+                    <label><button class="btn btn-primary" (click)="Edit(content,i)">Edit</button></label>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
-    </div>
     </div>
 </div>
 
-<div class="column">
-  <div class="card">
-    <h3>QA Progress</h3>
-    <div class="container" *ngFor="let item of arr;let i=index" >
-      <div class="card" *ngIf="item.status=='QA Progress'">
-        <div class="card-body">
-          {{item.desc}}
-        </div>
-        <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
-          <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
-          <label><button class="btn btn-primary" (click)="openEdit(content,i)">Edit</button></label>
+<div class="col-sm-2">
+  <div class="card text-dark bg-light">
+      <div class="card-header bg-dark text-center text-light">
+         <h3>QA Progress</h3>
+      </div>
+      <div class="card-body">
+        <div class="card-list">
+            <div class="container" *ngFor="let item of arr;let i=index" >
+                <div class="card" *ngIf="item.status=='QA Progress'">
+                  <div class="card-text">
+                    {{item.desc}}
+                  </div>
+                  <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
+                    <label><button class="btn btn-primary" (click)="Edit(content,i)">Edit</button></label>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
-    </div>
  </div>
 </div>
 
-<div class="column">
-  <div class="card">
-    <h3>System Testing Started</h3>
-    <div class="container" *ngFor="let item of arr;let i=index" >
-      <div class="card" *ngIf="item.status=='System Testing Started'">
-        <div class="card-body">
-          {{item.desc}}
-        </div>
+<div class="col-sm-2">
+  <div class="card text-dark bg-light">
+      <div class="card-header bg-dark text-center text-light">
+          <h3>System Testing Started</h3>
+      </div>
+      <div class="card-body">
+        <div class="caed-list">
+            <div class="container" *ngFor="let item of arr;let i=index" >
+                <div class="card" *ngIf="item.status=='System Testing Started'">
+                  <div class="card-text">
+                    {{item.desc}}
+                  </div>
 
-        <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
-          <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
-          <label><button class="btn btn-primary" (click)="openEdit(content,i)">Edit</button></label>
+                  <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
+                    <label><button class="btn btn-primary" (click)="Edit(content,i)">Edit</button></label>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
-    </div>
   </div>
  </div>
 
- <div class="column">
-   <div class="card">
-     <h3>System Testing Completed</h3>
-     <div class="container" *ngFor="let item of arr;let i=index" >
-       <div class="card" *ngIf="item.status=='System Testing Completed'">
-         <div class="card-body">
-           {{item.desc}}
-          </div>
-          <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
-            <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
-            <label><button class="btn btn-primary" (click)="openEdit(content,i)">Edit</button></label>
-          </div>
+ <div class="col-sm-2">
+   <div class="card text-dark bg-light">
+      <div class="card-header bg-dark text-center text-light">
+          <h3>System Testing Completed</h3>
+      </div>
+      <div class="card-body">
+        <div class="card-list">
+            <div class="container" *ngFor="let item of arr;let i=index" >
+                <div class="card" *ngIf="item.status=='System Testing Completed'">
+                  <div class="card-text">
+                    {{item.desc}}
+                   </div>
+                   <div class="card-footer"><label class="btn btn-primary btn-sm-2 text-white">{{item.due_date}}</label>&nbsp;&nbsp;
+                     <label class="btn btn-danger btn-sm-2 text-white" >{{item.priority}}</label>&nbsp;&nbsp;
+                     <label><button class="btn btn-primary" (click)="Edit(content,i)">Edit</button></label>
+                   </div>
+                 </div>
+               </div>
         </div>
       </div>
     </div>
@@ -177,3 +222,4 @@
     </div>
   </form>
 </ng-template>
+</div>

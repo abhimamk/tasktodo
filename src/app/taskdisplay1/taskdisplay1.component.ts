@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from './task';
-import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Status } from './status';
 @Component({
 selector: 'app-taskdisplay1',
@@ -62,7 +62,7 @@ ngOnInit() {
   });
 
 }
-openEdit(content, i) {
+Edit(content, i) {
   this.updatedItem = i;
   this.taskreactive.patchValue({
     task_id : this.arr[i].task_id,

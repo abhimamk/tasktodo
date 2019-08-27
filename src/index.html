@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function() {myFunction()};
+
+        function myFunction() {
+          var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          var scrolled = (winScroll / height) * 100;
+          document.getElementById("myBar").style.width = scrolled + "%";
+        }
+      </script>
   <meta charset="utf-8">
   <title>Task_todo</title>
   <base href="/">

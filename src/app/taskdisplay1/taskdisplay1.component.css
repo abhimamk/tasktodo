@@ -1,16 +1,61 @@
 * {
   box-sizing: border-box;
 }
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.color{
+  text-align: center;
+  color: white;
+}
+.color {
+  border: 1px solid #aaaaaa;
+/*
+  width: 200px;
+  height: 100px; */
+  background-color: rgb(221, 193, 152);
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {background-color: red;}
+  to {background-color: rgb(77, 79, 189);}
+}
+
+/* Standard syntax */
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: rgb(201, 121, 16);}
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 16.5%;
-  padding: 0 10px;
+.card-text{
+  font-size: 20px;
+}
+.label{
+  font-size: 40px;
 }
 
 /* Remove extra left and right margins, due to padding */
